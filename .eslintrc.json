@@ -1,0 +1,16 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module" // Allows for the use of imports
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended" // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+  ],
+  "rules": {
+    "@typescript-eslint/no-empty-interface": "off",
+    "semi": "off",
+    "@typescript-eslint/semi": [ "error" ],
+    "quotes": [2, "single", { "avoidEscape": true }]
+  }
+}
