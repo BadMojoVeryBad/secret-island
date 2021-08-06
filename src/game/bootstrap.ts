@@ -16,6 +16,15 @@ import { PlayerStrategyInterface } from './strategies/playerStrategyInterface';
 import { PlayerStrategy } from './strategies/playerStrategy';
 import { ControlsInterface } from '../framework/controls/ControlsInterface';
 import { Controls } from '../framework/controls/Controls';
+import { Braziers } from './components/objects/braziers';
+import { Houses } from './components/objects/houses';
+import { Fences } from './components/objects/fences';
+import { InvisibleWalls } from './components/objects/invisibleWalls';
+import { NPCs } from './components/objects/npcs';
+import { Grass } from './components/objects/grass';
+import { TilemapStrategyInterface } from './strategies/tilemapStrategyInterface';
+import { TilemapStrategy } from './strategies/tilemapStrategy';
+import { PalmTrees } from './components/objects/palmTrees';
 
 /**
  * Bootstrap the game here.
@@ -32,6 +41,13 @@ export default class Bootstrap extends Game {
         this.addComponent('player', Player);
         this.addComponent('level', Level);
         this.addComponent('backgrounds', Backgrounds);
+        this.addComponent('braziers', Braziers);
+        this.addComponent('houses', Houses);
+        this.addComponent('fences', Fences);
+        this.addComponent('invisibleWalls', InvisibleWalls);
+        this.addComponent('npcs', NPCs);
+        this.addComponent('grass', Grass);
+        this.addComponent('palmTrees', PalmTrees);
         this.addComponent('mainCamera', MainCamera);
         this.addComponent('debugCamera', DebugCamera);
 
@@ -43,6 +59,7 @@ export default class Bootstrap extends Game {
         this.bind<LoggerInterface>('LoggerInterface', Logger);
         this.bind<Constants>('Constants', Constants);
         this.bind<PlayerStrategyInterface>('PlayerStrategyInterface', PlayerStrategy);
+        this.bind<TilemapStrategyInterface>('TilemapStrategyInterface', TilemapStrategy);
         this.bind<ControlsInterface>('ControlsInterface', Controls);
     }
 }

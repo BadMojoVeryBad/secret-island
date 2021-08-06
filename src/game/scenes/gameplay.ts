@@ -13,6 +13,13 @@ export class Gameplay extends Scene {
         this.addComponent('player');
         this.addComponent('mainCamera');
         this.addComponent('backgrounds');
+        this.addComponent('braziers');
+        this.addComponent('houses');
+        this.addComponent('fences');
+        this.addComponent('grass');
+        this.addComponent('palmTrees');
+        this.addComponent('invisibleWalls');
+        this.addComponent('npcs');
 
         // Add the "level" component with the level name so it
         // can load the lorrect tiled maps.

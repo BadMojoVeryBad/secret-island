@@ -76,5 +76,33 @@ export class Load extends Scene {
             frameRate: 1,
             repeat: -1,
         });
+
+        this.anims.create({
+            key: 'brazierAlight',
+            frames: this.anims.generateFrameNames('textures', { prefix: 'brazierAlight', start: 1, end: 3, zeroPad: 0 }),
+            frameRate: 12,
+            repeat: -1,
+        });
+
+        this.anims.create({
+            key: 'npcIdle',
+            frames: this.anims.generateFrameNames('textures', { prefix: 'npc', start: 1, end: 4, zeroPad: 0 }),
+            frameRate: 6,
+            repeat: -1,
+        });
+
+        this.anims.create({
+            key: 'grass',
+            frames: this.anims.generateFrameNames('textures', { prefix: 'grass', start: 1, end: 4, zeroPad: 0 }),
+            frameRate: 12,
+            repeat: 0,
+        });
+
+        this.anims.create({
+            key: 'palmTree',
+            frames: this.anims.generateFrameNames('textures', { prefix: 'palmTree', start: 1, end: 9, zeroPad: 0 }),
+            frameRate: 12,
+            repeat: -1,
+        });
     }
 }

@@ -10,6 +10,7 @@ export class PlayerData {
     public isGrounded = false;
     public lastGrounded = 0;
     public isJumping = false;
+    public isActive = false;
 }
 
 @injectable()
@@ -83,6 +84,9 @@ export class Player extends Component {
 
         // Set the flipX flag.
         this.player.sprite.flipX = this.player.sprite.body.velocity.x < 0;
+
+        // Set the isActive flag.
+        this.player.isActive = this.playerStrategy.isActive();
 
         const animation = this.playerStrategy.getAnimation(this.player.sprite.body.velocity, (this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down));
         this.player.sprite.anims.play(animation, true);

@@ -30,7 +30,6 @@ export class MainCamera extends Component {
         this.logger.info('Adding shader effects to player.');
         this.scene.cameras.main.setPostPipeline([Vignette, SoftLight]);
         this.scene.cameras.main.fadeIn(2000, 0, 0, 0);
-
         // Listen to events.
         this.logger.info('Listening to "playerCreated" event.');
         this.events.on('playerCreated', (player: PlayerData) => {

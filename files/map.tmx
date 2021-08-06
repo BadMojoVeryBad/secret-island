@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="175" height="75" tilewidth="8" tileheight="8" infinite="0" nextlayerid="6" nextobjectid="1">
+<map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="175" height="75" tilewidth="8" tileheight="8" infinite="0" nextlayerid="6" nextobjectid="89">
  <editorsettings>
   <export target="../src/assets/map.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="tiles" tilewidth="8" tileheight="8" spacing="4" margin="4" tilecount="100" columns="10">
   <image source="../src/assets/tiles.png" width="128" height="128"/>
  </tileset>
- <layer id="3" name="backgroundTiles" width="175" height="75">
+ <layer id="3" name="backgroundTiles" width="175" height="75" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -85,7 +85,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="1" name="tiles" width="175" height="75">
+ <layer id="1" name="tiles" width="175" height="75" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -164,7 +164,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="4" name="foregroundTiles" width="175" height="75">
+ <layer id="4" name="foregroundTiles" width="175" height="75" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -243,5 +243,102 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="5" name="events" locked="1"/>
+ <objectgroup id="5" name="events">
+  <object id="1" name="brazier" gid="51" x="160" y="208" width="8" height="16"/>
+  <object id="3" name="house" gid="51" x="200" y="200" width="16" height="19"/>
+  <object id="4" name="house" gid="2147483699" x="240" y="200" width="16" height="19"/>
+  <object id="5" name="house" gid="51" x="295" y="187" width="16" height="19"/>
+  <object id="6" name="house" gid="51" x="303" y="200" width="16" height="19"/>
+  <object id="7" name="house" gid="2147483699" x="288" y="200" width="16" height="19"/>
+  <object id="8" name="fence" gid="51" x="216" y="200" width="22" height="6"/>
+  <object id="9" name="fence" gid="51" x="319" y="200" width="22" height="6"/>
+  <object id="10" name="invisibleWall" gid="51" x="48" y="208" width="8" height="48"/>
+  <object id="11" name="invisibleWall" gid="51" x="1288" y="208" width="8" height="48"/>
+  <object id="12" name="invisibleWall" gid="51" x="936" y="216" width="24" height="8"/>
+  <object id="13" name="brazier" gid="51" x="472" y="416" width="8" height="16"/>
+  <object id="14" name="brazier" gid="51" x="1232" y="208" width="8" height="16"/>
+  <object id="15" name="brazier" gid="51" x="712" y="320" width="8" height="16"/>
+  <object id="16" name="npc" gid="51" x="264" y="200" width="16" height="16">
+   <properties>
+    <property name="type" value="speechBubble2"/>
+   </properties>
+  </object>
+  <object id="17" name="npc" gid="2147483699" x="322" y="200" width="16" height="16">
+   <properties>
+    <property name="type" value="speechBubble1"/>
+   </properties>
+  </object>
+  <object id="18" name="house" gid="51" x="723" y="144" width="16" height="19"/>
+  <object id="19" name="fence" gid="51" x="739" y="144" width="22" height="6"/>
+  <object id="20" name="npc" gid="51" x="743" y="144" width="16" height="16">
+   <properties>
+    <property name="type" value="speechBubble1"/>
+   </properties>
+  </object>
+  <object id="21" name="grass" gid="51" x="260" y="200" width="8" height="8"/>
+  <object id="23" name="grass" gid="51" x="276" y="200" width="8" height="8"/>
+  <object id="24" name="grass" gid="51" x="184" y="200" width="8" height="8"/>
+  <object id="25" name="grass" gid="51" x="119" y="208" width="8" height="8"/>
+  <object id="26" name="grass" gid="51" x="127" y="208" width="8" height="8"/>
+  <object id="27" name="grass" gid="51" x="145" y="208" width="8" height="8"/>
+  <object id="28" name="grass" gid="51" x="424" y="192" width="8" height="8"/>
+  <object id="29" name="grass" gid="51" x="432" y="192" width="8" height="8"/>
+  <object id="30" name="grass" gid="51" x="440" y="192" width="8" height="8"/>
+  <object id="31" name="grass" gid="51" x="448" y="192" width="8" height="8"/>
+  <object id="32" name="grass" gid="51" x="456" y="192" width="8" height="8"/>
+  <object id="33" name="grass" gid="51" x="464" y="192" width="8" height="8"/>
+  <object id="34" name="grass" gid="51" x="476" y="192" width="8" height="8"/>
+  <object id="35" name="grass" gid="51" x="484" y="192" width="8" height="8"/>
+  <object id="36" name="grass" gid="51" x="497" y="192" width="8" height="8"/>
+  <object id="37" name="grass" gid="51" x="505" y="192" width="8" height="8"/>
+  <object id="38" name="grass" gid="51" x="513" y="192" width="8" height="8"/>
+  <object id="39" name="grass" gid="51" x="521" y="192" width="8" height="8"/>
+  <object id="41" name="grass" gid="51" x="402" y="192" width="8" height="8"/>
+  <object id="42" name="palmTree" gid="51" x="360" y="200" width="32" height="32"/>
+  <object id="43" name="palmTree" gid="2147483699" x="520" y="192" width="32" height="32"/>
+  <object id="44" name="palmTree" gid="51" x="587" y="168" width="32" height="32"/>
+  <object id="45" name="palmTree" gid="51" x="827" y="192" width="32" height="32"/>
+  <object id="46" name="palmTree" gid="2147483699" x="844" y="192" width="32" height="32"/>
+  <object id="47" name="palmTree" gid="51" x="1094" y="184" width="32" height="32"/>
+  <object id="48" name="palmTree" gid="2147483699" x="1171" y="200" width="32" height="32"/>
+  <object id="49" name="grass" gid="51" x="804" y="192" width="8" height="8"/>
+  <object id="50" name="grass" gid="51" x="812" y="192" width="8" height="8"/>
+  <object id="51" name="grass" gid="51" x="820" y="192" width="8" height="8"/>
+  <object id="52" name="grass" gid="51" x="828" y="192" width="8" height="8"/>
+  <object id="53" name="grass" gid="51" x="840" y="192" width="8" height="8"/>
+  <object id="54" name="grass" gid="51" x="848" y="192" width="8" height="8"/>
+  <object id="55" name="grass" gid="51" x="861" y="192" width="8" height="8"/>
+  <object id="56" name="grass" gid="51" x="912" y="208" width="8" height="8"/>
+  <object id="57" name="grass" gid="51" x="920" y="208" width="8" height="8"/>
+  <object id="58" name="grass" gid="51" x="928" y="208" width="8" height="8"/>
+  <object id="59" name="grass" gid="51" x="1004" y="200" width="8" height="8"/>
+  <object id="60" name="grass" gid="51" x="1016" y="200" width="8" height="8"/>
+  <object id="61" name="grass" gid="51" x="1024" y="200" width="8" height="8"/>
+  <object id="62" name="grass" gid="51" x="969" y="208" width="8" height="8"/>
+  <object id="63" name="grass" gid="51" x="1091" y="184" width="8" height="8"/>
+  <object id="88" name="grass" gid="51" x="1091" y="184" width="8" height="8"/>
+  <object id="64" name="grass" gid="51" x="1099" y="184" width="8" height="8"/>
+  <object id="87" name="grass" gid="51" x="1099" y="184" width="8" height="8"/>
+  <object id="65" name="grass" gid="51" x="1107" y="184" width="8" height="8"/>
+  <object id="86" name="grass" gid="51" x="1107" y="184" width="8" height="8"/>
+  <object id="66" name="grass" gid="51" x="1115" y="184" width="8" height="8"/>
+  <object id="85" name="grass" gid="51" x="1115" y="184" width="8" height="8"/>
+  <object id="67" name="grass" gid="51" x="1139" y="192" width="8" height="8"/>
+  <object id="68" name="grass" gid="51" x="1147" y="192" width="8" height="8"/>
+  <object id="69" name="grass" gid="51" x="1160" y="192" width="8" height="8"/>
+  <object id="70" name="grass" gid="51" x="1066" y="192" width="8" height="8"/>
+  <object id="71" name="grass" gid="51" x="1074" y="192" width="8" height="8"/>
+  <object id="72" name="grass" gid="51" x="690" y="152" width="8" height="8"/>
+  <object id="73" name="grass" gid="51" x="698" y="152" width="8" height="8"/>
+  <object id="75" name="grass" gid="51" x="718" y="144" width="8" height="8"/>
+  <object id="76" name="grass" gid="51" x="780" y="152" width="8" height="8"/>
+  <object id="77" name="grass" gid="51" x="568" y="176" width="8" height="8"/>
+  <object id="78" name="grass" gid="51" x="591" y="168" width="8" height="8"/>
+  <object id="79" name="grass" gid="51" x="599" y="168" width="8" height="8"/>
+  <object id="80" name="grass" gid="51" x="607" y="168" width="8" height="8"/>
+  <object id="81" name="grass" gid="51" x="615" y="168" width="8" height="8"/>
+  <object id="82" name="grass" gid="51" x="623" y="168" width="8" height="8"/>
+  <object id="83" name="grass" gid="51" x="646" y="176" width="8" height="8"/>
+  <object id="84" name="grass" gid="51" x="654" y="176" width="8" height="8"/>
+ </objectgroup>
 </map>

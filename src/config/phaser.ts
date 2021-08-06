@@ -6,10 +6,10 @@ export default {
     backgroundColor: '#000000',
     width: 64,
     height: 64,
-    scale: {
-        mode: Phaser.Scale.ENVELOP,
-        autoCenter: Phaser.Scale.CENTER_BOTH
-    },
+    // scale: {
+    //     mode: Phaser.Scale.ENVELOP,
+    //     autoCenter: Phaser.Scale.CENTER_BOTH
+    // },
     pixelArt: true,
     antialias: false,
     input: {

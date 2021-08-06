@@ -41,10 +41,10 @@ export class Level extends Component {
         const layer = this.map.createLayer('tiles', tiles);
         layer.setDepth(this.constants.MAP_DEPTH);
         const layer2 = this.map.createLayer('foregroundTiles', tiles);
-        layer2.setDepth(this.constants.MAP_DEPTH + this.constants.ONE);
+        layer2.setDepth(this.constants.OBJECT_DEPTH + this.constants.ONE);
         const layer3 = this.map.createLayer('backgroundTiles', tiles);
         layer3.setDepth(this.constants.PLAYER_DEPTH - this.constants.ONE);
-       this.map.setCollision([1, 39, 24, 29, 25, 26, 27, 12, 13, 18, 11, 21, 22, 23], true, true, 'tiles');
+        this.map.setCollision([1, 39, 24, 29, 25, 26, 27, 12, 13, 18, 11, 21, 22, 23], true, true, 'tiles');
 
         // Debug graphics.
         // const debugGraphics = this.scene.add.graphics();

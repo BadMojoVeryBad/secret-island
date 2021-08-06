@@ -181,6 +181,23 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">textures/blueParticle.png</key>
+            <key type="filename">textures/whiteParticle.png</key>
+            <key type="filename">textures/yellowParticle.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>0,0,1,1</rect>
+                <key>scale9Paddings</key>
+                <rect>0,0,1,1</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">textures/brazier.png</key>
             <key type="filename">textures/brazierAlight1.png</key>
             <key type="filename">textures/brazierAlight2.png</key>
@@ -260,6 +277,7 @@
                 <false/>
             </struct>
             <key type="filename">textures/caveplantGlow.png</key>
+            <key type="filename">textures/fireIndicator.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -352,21 +370,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">textures/platform.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,1,8,1</rect>
-                <key>scale9Paddings</key>
-                <rect>4,1,8,1</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
+            <key type="filename">textures/npc.png</key>
             <key type="filename">textures/player.png</key>
             <key type="filename">textures/playerRunning1.png</key>
             <key type="filename">textures/playerRunning2.png</key>
@@ -386,6 +390,8 @@
             <key type="filename">textures/playerStanding4.png</key>
             <key type="filename">textures/playerStanding5.png</key>
             <key type="filename">textures/playerStanding6.png</key>
+            <key type="filename">textures/speechBubble1.png</key>
+            <key type="filename">textures/speechBubble2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -397,6 +403,21 @@
                 <rect>4,4,8,8</rect>
                 <key>scale9Paddings</key>
                 <rect>4,4,8,8</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">textures/platform.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,1,8,1</rect>
+                <key>scale9Paddings</key>
+                <rect>4,1,8,1</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -416,21 +437,6 @@
                 <rect>8,7,17,13</rect>
                 <key>scale9Paddings</key>
                 <rect>8,7,17,13</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">textures/whiteParticle.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>0,0,1,1</rect>
-                <key>scale9Paddings</key>
-                <rect>0,0,1,1</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
