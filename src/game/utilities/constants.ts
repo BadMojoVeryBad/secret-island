@@ -40,5 +40,6 @@ export class Constants {
     public readonly MAP_DEPTH = 110;
     public readonly OBJECT_DEPTH = 120;
     public readonly TEXT_DEPTH = 130;
+    public readonly HUD_DEPTH = 200;
     public readonly DEBUG_DEPTH = 1000;
 }

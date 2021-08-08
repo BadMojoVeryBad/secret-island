@@ -11,6 +11,8 @@ export class PlayerData {
     public lastGrounded = 0;
     public isJumping = false;
     public isActive = false;
+    public canMove = true;
+    public isSitting = true;
 }
 
 @injectable()
@@ -48,7 +50,29 @@ export class Player extends Component {
         this.player.sprite.body.setOffset(8, 6);
         // this.player.sprite.setCollideWorldBounds(true);
 
-        this.logger.info('Finished "create()" for "robot".');
+        this.events.on('playerStart', (event: Phaser.Types.Tilemaps.TiledObject) => {
+            this.player.sprite.setPosition((event.x + this.player.sprite.width * this.constants.HALF) * this.constants.SCALE, (event.y - this.player.sprite.height * this.constants.HALF) * this.constants.SCALE);
+        });
+
+        this.events.on('disableControls', () => {
+            this.player.canMove = false;
+        });
+
+        this.events.on('enableControls', () => {
+            this.player.canMove = true;
+        });
+
+        this.events.on('robotMovingLeft', () => {
+            this.player.isSitting = false;
+        });
+
+        this.events.on('robotMovingRight', () => {
+            this.player.isSitting = false;
+        });
+
+        this.events.on('robotJumping', () => {
+            this.player.isSitting = false;
+        });
     }
 
     public afterCreate(): void {
@@ -62,13 +86,13 @@ export class Player extends Component {
 
     public update(time: number, delta: number): void {
         // Set x velocity.
-        const velocityX = this.playerStrategy.getVelocityX();
+        const velocityX = this.playerStrategy.getVelocityX(this.player.canMove);
         if (velocityX !== null) {
             this.player.sprite.setVelocityX(velocityX);
         }
 
         // Set y velocity.
-        const velocityY = this.playerStrategy.getVelocityY(this.player.sprite.body.velocity, this.player.isGrounded, this.player.lastGrounded, this.player.isJumping);
+        const velocityY = this.playerStrategy.getVelocityY(this.player.sprite.body.velocity, this.player.isGrounded, this.player.lastGrounded, this.player.isJumping, this.player.canMove);
         if (velocityY !== null) {
             this.player.sprite.setVelocityY(velocityY);
         }
@@ -88,7 +112,7 @@ export class Player extends Component {
         // Set the isActive flag.
         this.player.isActive = this.playerStrategy.isActive();
 
-        const animation = this.playerStrategy.getAnimation(this.player.sprite.body.velocity, (this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down));
+        const animation = this.playerStrategy.getAnimation(this.player.sprite.body.velocity, (this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down), this.player.isSitting);
         this.player.sprite.anims.play(animation, true);
     }
 }

@@ -9,7 +9,8 @@
         "prod": "npx mix --production",
         "test": "jest",
         "lint": "node_modules/eslint/bin/eslint.js src/",
-        "fix": "node_modules/eslint/bin/eslint.js src/ --fix"
+        "fix": "node_modules/eslint/bin/eslint.js src/ --fix",
+        "push": "butler push dist badmojoverybad/secret-island:web"
     },
     "repository": {
         "type": "git",

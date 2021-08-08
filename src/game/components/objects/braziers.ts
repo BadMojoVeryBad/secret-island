@@ -2,6 +2,7 @@ import { inject, injectable } from 'inversify';
 import { Component } from '../../../framework/component';
 import { EventsInterface } from '../../../framework/utilities/eventsInterface';
 import { LoggerInterface } from '../../../framework/utilities/loggerInterface';
+import { TilemapStrategyInterface } from '../../strategies/tilemapStrategyInterface';
 import { Constants } from '../../utilities/constants';
 import { PlayerData } from '../player';
 
@@ -12,13 +13,15 @@ export class Braziers extends Component {
     private constants: Constants;
     private braziers: Phaser.GameObjects.Sprite[] = [];
     private player: PlayerData;
+    private tilemapStrategy: TilemapStrategyInterface;
 
-    constructor(@inject('LoggerInterface') logger: LoggerInterface, @inject('EventsInterface') events: EventsInterface, @inject('Constants') constants: Constants) {
+    constructor(@inject('LoggerInterface') logger: LoggerInterface, @inject('EventsInterface') events: EventsInterface, @inject('Constants') constants: Constants, @inject('TilemapStrategyInterface') tilemapStrategy: TilemapStrategyInterface) {
         super();
 
         this.events = events;
         this.logger = logger;
         this.constants = constants;
+        this.tilemapStrategy = tilemapStrategy;
     }
 
     public create(): void {
@@ -30,6 +33,7 @@ export class Braziers extends Component {
             sprite.flipY = event.flippedVertical;
             sprite.setPosition((event.x + sprite.width * this.constants.HALF) * this.constants.SCALE, (event.y - sprite.height * this.constants.HALF) * this.constants.SCALE);
             sprite.setData('active', false);
+            sprite.setData('event', this.tilemapStrategy.getProperty<string>(event, 'event'));
             this.scene.physics.add.existing(sprite, true);
             (sprite.body as Phaser.Physics.Arcade.Body).setCircle(16);
             (sprite.body as Phaser.Physics.Arcade.Body).setOffset(-16 + (sprite.width * this.constants.SCALE * this.constants.HALF), -16 + (sprite.height * this.constants.SCALE * this.constants.HALF));
@@ -84,6 +88,7 @@ export class Braziers extends Component {
                 brazier.anims.play('brazierAlight', true);
                 fireIndicator.setAlpha(0);
                 fireIndicator.setData('active', false);
+                this.events.fire(brazier.getData('event'), brazier);
 
                 const particles = this.scene.add.particles('textures', 'whiteParticle');
                 const emitter = particles.createEmitter({

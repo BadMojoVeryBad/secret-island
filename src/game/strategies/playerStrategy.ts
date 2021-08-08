@@ -31,14 +31,14 @@ export class PlayerStrategy implements PlayerStrategyInterface {
     /**
      * @inheritdoc
      */
-    public getVelocityX(): number {
+    public getVelocityX(canMove: boolean): number {
         let velocity: number = null;
 
         // Handle left and right.
-        if (this.controls.isActive(Control.LEFT)) {
+        if (this.controls.isActive(Control.LEFT) && canMove) {
             this.events.fire('robotMovingLeft');
             velocity = this.constants.PLAYER_HORIZONAL_VELOCITY * this.constants.NEGATIVE_ONE;
-        } else if (this.controls.isActive(Control.RIGHT)) {
+        } else if (this.controls.isActive(Control.RIGHT) && canMove) {
             this.events.fire('robotMovingRight');
             velocity = this.constants.PLAYER_HORIZONAL_VELOCITY;
         } else {
@@ -52,14 +52,14 @@ export class PlayerStrategy implements PlayerStrategyInterface {
     /**
      * @inheritdoc
      */
-    public getVelocityY(currentVelocity: Phaser.Math.Vector2, isGrounded: boolean, lastGrounded: number, isJumping: boolean): number {
+    public getVelocityY(currentVelocity: Phaser.Math.Vector2, isGrounded: boolean, lastGrounded: number, isJumping: boolean, canMove: boolean): number {
         let velocity = null;
 
         // Jump even if the player has recently left a platform.
         const canJump = lastGrounded + this.constants.PLAYER_JUMP_DELAY > this.phaserGame.getTime();
 
         // Handle jump.
-        if (this.controls.isActive(Control.JUMP) && canJump && !isJumping) {
+        if (this.controls.isActive(Control.JUMP) && canJump && !isJumping && canMove) {
             this.logger.info('Jumping.');
             this.events.fire('robotJumping');
             velocity = this.constants.PLAYER_VERTICAL_VELOCITY * this.constants.NEGATIVE_ONE;
@@ -77,9 +77,11 @@ export class PlayerStrategy implements PlayerStrategyInterface {
     /**
      * @inheritdoc
      */
-    public getAnimation(currentVelocity: Phaser.Math.Vector2, isGrounded: boolean): string {
+    public getAnimation(currentVelocity: Phaser.Math.Vector2, isGrounded: boolean, isSitting: boolean): string {
         // Find animation.
-        if (currentVelocity.x !== 0 && isGrounded) {
+        if (isSitting) {
+            return 'playerSitting';
+        } else if (currentVelocity.x !== 0 && isGrounded) {
             return 'playerRunning';
         } else if (!isGrounded && currentVelocity.y < 0) {
             return 'playerJumping';

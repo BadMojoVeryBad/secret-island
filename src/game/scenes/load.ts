@@ -14,7 +14,7 @@ export class Load extends Scene {
         // Load audio.
         // ...
 
-        // Load images. 'textures', 'assets/textures.json', 'assets')
+        // Load images.
         this.load.image('tiles', 'assets/tiles.png');
         this.load.atlas({
             key: 'textures',
@@ -28,7 +28,7 @@ export class Load extends Scene {
         // Basic graphics and loading bar.
         const graphics = this.add.graphics();
         graphics.fillStyle(0xffffff, 1);
-        this.loader = this.add.image(this.sys.game.config.width as number * this.constants.HALF, (this.sys.game.config.height as number * this.constants.HALF) + (this.sys.game.config.height as number * 0.1), 'loadingBar');
+        this.loader = this.add.image(this.sys.game.config.width as number * this.constants.HALF, (this.sys.game.config.height as number * this.constants.HALF), 'loadingBar');
         this.loader.setScrollFactor(this.constants.ZERO);
         this.loader.setScale(this.constants.SCALE);
         this.loader.alpha = 1;
@@ -37,7 +37,7 @@ export class Load extends Scene {
         this.load.on('progress', (percent: number) => {
             const x = this.loader.x - (this.loader.displayWidth * this.constants.HALF) + this.constants.SCALE;
             const y = this.loader.y - (this.loader.displayHeight * this.constants.HALF) + this.constants.SCALE;
-            const height = 8;
+            const height = 2;
             const width = (this.loader.displayWidth - 16) * percent;
             graphics.fillRect(x, y, width, height);
         });
@@ -49,6 +49,13 @@ export class Load extends Scene {
     }
 
     public create(): void {
+        this.anims.create({
+            key: 'playerSitting',
+            frames: this.anims.generateFrameNames('textures', { prefix: 'playerSitting', start: 1, end: 6, zeroPad: 0 }),
+            frameRate: 18,
+            repeat: -1,
+        });
+
         this.anims.create({
             key: 'playerIdle',
             frames: this.anims.generateFrameNames('textures', { prefix: 'playerStanding', start: 1, end: 6, zeroPad: 0 }),

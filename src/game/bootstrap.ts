@@ -25,6 +25,14 @@ import { Grass } from './components/objects/grass';
 import { TilemapStrategyInterface } from './strategies/tilemapStrategyInterface';
 import { TilemapStrategy } from './strategies/tilemapStrategy';
 import { PalmTrees } from './components/objects/palmTrees';
+import { Barrier1 } from './components/objects/barrier1';
+import { Start } from './components/objects/start';
+import { DirectionArrows } from './components/objects/directionArrows';
+import { Barrier2 } from './components/objects/barrier2';
+import { Platforms } from './components/objects/platforms';
+import { EventZones } from './components/objects/eventZones';
+import { PlayerLight } from './components/objects/playerLight';
+import { Barrier3 } from './components/objects/barrier3';
 
 /**
  * Bootstrap the game here.
@@ -39,6 +47,7 @@ export default class Bootstrap extends Game {
 
         // Add components to the game here.
         this.addComponent('player', Player);
+        this.addComponent('playerLight', PlayerLight);
         this.addComponent('level', Level);
         this.addComponent('backgrounds', Backgrounds);
         this.addComponent('braziers', Braziers);
@@ -48,6 +57,13 @@ export default class Bootstrap extends Game {
         this.addComponent('npcs', NPCs);
         this.addComponent('grass', Grass);
         this.addComponent('palmTrees', PalmTrees);
+        this.addComponent('barrier1', Barrier1);
+        this.addComponent('barrier2', Barrier2);
+        this.addComponent('barrier3', Barrier3);
+        this.addComponent('start', Start);
+        this.addComponent('platforms', Platforms);
+        this.addComponent('eventZones', EventZones);
+        this.addComponent('directionArrows', DirectionArrows);
         this.addComponent('mainCamera', MainCamera);
         this.addComponent('debugCamera', DebugCamera);
 
