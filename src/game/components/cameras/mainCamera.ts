@@ -17,8 +17,8 @@ export class MainCamera extends Component {
     private events: EventsInterface;
     private constants: Constants;
     private hasCustomCameraBounds = false;
-    private satTarget = 0.5;
-    private sat = 0.5;
+    private satTarget = 0.25;
+    private sat = 0.25;
 
     constructor(@inject('LoggerInterface') logger: LoggerInterface, @inject('EventsInterface') events: EventsInterface, @inject('Constants') constants: Constants) {
         super();

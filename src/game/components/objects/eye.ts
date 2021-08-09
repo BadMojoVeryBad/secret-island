@@ -63,7 +63,7 @@ export class Eye extends Component {
 
             setTimeout(() => {
                 this.scene.cameras.main.stopFollow();
-                this.scene.cameras.main.pan(472, 396, 2000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
+                this.scene.cameras.main.pan(471, 396, 2000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
                     if (progress !== 1) {
                         return;
                     }
