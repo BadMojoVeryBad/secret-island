@@ -107,7 +107,7 @@ export class Player extends Component {
         }
 
         // Set the flipX flag.
-        this.player.sprite.flipX = this.player.sprite.body.velocity.x < 0;
+        this.player.sprite.flipX = this.playerStrategy.getFlipX(this.player.sprite.flipX, this.player.sprite.body.velocity.x);
 
         // Set the isActive flag.
         this.player.isActive = this.playerStrategy.isActive();

@@ -98,4 +98,14 @@ export class PlayerStrategy implements PlayerStrategyInterface {
     public isActive(): boolean {
         return this.controls.isActive(Control.ACTIVATE) > 0;
     }
+
+    getFlipX(current: boolean, velocity: number): boolean {
+        if (velocity > 0) {
+            return false;
+        } else if (velocity < 0) {
+            return true;
+        } else {
+            return current;
+        }
+    }
 }

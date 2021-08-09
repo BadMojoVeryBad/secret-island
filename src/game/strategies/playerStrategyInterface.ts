@@ -22,6 +22,8 @@ export interface PlayerStrategyInterface {
      */
     getAnimation(currentVelocity: Phaser.Math.Vector2, isGrounded: boolean, isSitting: boolean): string;
 
+    getFlipX(current: boolean, velocity: number): boolean;
+
     /**
      * Is the player doing electrified.
      */
