@@ -1,5 +1,6 @@
 import { Vignette } from '../game/pipelines/vignette';
 import { SoftLight } from '../game/pipelines/softLight';
+import { HSL } from '../game/pipelines/hsl';
 
 export default {
     type: Phaser.WEBGL,
@@ -34,5 +35,6 @@ export default {
     pipeline: [
         Vignette,
         SoftLight,
+        HSL,
     ]
 };

@@ -38,6 +38,7 @@ export class Barrier2 extends Component {
 
         this.events.on('lightBrazier2', (event: Phaser.Types.Tilemaps.TiledObject) => {
             this.events.fire('disableControls');
+            this.events.fire('increaseSaturation');
 
             setTimeout(() => {
                 this.scene.cameras.main.stopFollow();

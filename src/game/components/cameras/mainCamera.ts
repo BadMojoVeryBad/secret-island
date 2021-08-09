@@ -6,6 +6,7 @@ import { Constants } from '../../utilities/constants';
 import { Vignette } from '../../pipelines/vignette';
 import { PlayerData } from '../player';
 import { SoftLight } from '../../pipelines/softLight';
+import { HSL } from '../../pipelines/hsl';
 
 /**
  * The camera that follows the player in-game.
@@ -16,6 +17,8 @@ export class MainCamera extends Component {
     private events: EventsInterface;
     private constants: Constants;
     private hasCustomCameraBounds = false;
+    private satTarget = 0.25;
+    private sat = 0.25;
 
     constructor(@inject('LoggerInterface') logger: LoggerInterface, @inject('EventsInterface') events: EventsInterface, @inject('Constants') constants: Constants) {
         super();
@@ -28,8 +31,11 @@ export class MainCamera extends Component {
     public create(): void {
         // Add shader effects.
         this.logger.info('Adding shader effects to player.');
-        this.scene.cameras.main.setPostPipeline([Vignette, SoftLight]);
+        this.scene.cameras.main.setPostPipeline([Vignette, SoftLight, HSL]);
         this.scene.cameras.main.fadeIn(1000, 0, 0, 0);
+
+        let pipelineInstance = this.scene.cameras.main.getPostPipeline(HSL);
+        (pipelineInstance as HSL).setSatAdjust(this.sat);
 
         // Listen to events.
         this.logger.info('Listening to "playerCreated" event.');
@@ -61,5 +67,15 @@ export class MainCamera extends Component {
             this.scene.cameras.main.setBounds(event.x * this.constants.SCALE, (event.y - event.height) * this.constants.SCALE, event.width * this.constants.SCALE, event.height * this.constants.SCALE);
             this.hasCustomCameraBounds = true;
         });
+
+        this.events.on('increaseSaturation', () => {
+            this.satTarget += 0.25;
+        });
+    }
+
+    public update(time: number, delta: number): void {
+        this.sat = Phaser.Math.Linear(this.sat, this.satTarget, 0.01);
+        let pipelineInstance = this.scene.cameras.main.getPostPipeline(HSL);
+        (pipelineInstance as HSL).setSatAdjust(this.sat);
     }
 }

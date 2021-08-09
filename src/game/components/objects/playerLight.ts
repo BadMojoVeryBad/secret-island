@@ -91,6 +91,10 @@ export class PlayerLight extends Component {
         });
 
         this.scene.events.on('postupdate', () => {
+            this.events.fire('updatePlayerLight');
+        });
+
+        this.events.on('updatePlayerLight', () => {
             // Add player mask.
             const mask = this.scene.make.image({
                 x: this.player.sprite.body.x,

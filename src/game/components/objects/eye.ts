@@ -57,8 +57,9 @@ export class Eye extends Component {
             particles.setDepth(this.constants.PLAYER_DEPTH + 2);
         });
 
-        this.events.on('lightBrazier4', (event: Phaser.Types.Tilemaps.TiledObject) => {
+        this.events.on('lightBrazier4', (brazier: Phaser.GameObjects.Sprite) => {
             this.events.fire('disableControls');
+            this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
 
             setTimeout(() => {
                 this.scene.cameras.main.stopFollow();
@@ -74,6 +75,7 @@ export class Eye extends Component {
 
                         // Mask.
                         this.events.fire('addMask', new Phaser.Math.Vector2(eye.x, eye.y));
+                        this.events.fire('increaseSaturation');
 
                         // Particles.
                         const particles = this.scene.add.particles('textures', 'whiteParticle');

@@ -39,6 +39,7 @@ export class Barrier3 extends Component {
         this.events.on('lightBrazier3', (brazier: Phaser.GameObjects.Sprite) => {
             this.events.fire('disableControls');
             this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
+            this.events.fire('increaseSaturation');
 
             setTimeout(() => {
                 this.scene.cameras.main.stopFollow();
