@@ -28,6 +28,9 @@ export class Gameplay extends Scene {
         this.addComponent('platforms');
         this.addComponent('eventZones');
         this.addComponent('playerLight');
+        this.addComponent('cavePlant');
+        this.addComponent('caveWater');
+        this.addComponent('eye');
 
         // Add the "level" component with the level name so it
         // can load the lorrect tiled maps.

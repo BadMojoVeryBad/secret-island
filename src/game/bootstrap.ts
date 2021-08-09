@@ -33,6 +33,9 @@ import { Platforms } from './components/objects/platforms';
 import { EventZones } from './components/objects/eventZones';
 import { PlayerLight } from './components/objects/playerLight';
 import { Barrier3 } from './components/objects/barrier3';
+import { CavePlant } from './components/objects/cavePlant';
+import { CaveWater } from './components/objects/caveWater';
+import { Eye } from './components/objects/eye';
 
 /**
  * Bootstrap the game here.
@@ -61,7 +64,10 @@ export default class Bootstrap extends Game {
         this.addComponent('barrier2', Barrier2);
         this.addComponent('barrier3', Barrier3);
         this.addComponent('start', Start);
+        this.addComponent('cavePlant', CavePlant);
+        this.addComponent('caveWater', CaveWater);
         this.addComponent('platforms', Platforms);
+        this.addComponent('eye', Eye);
         this.addComponent('eventZones', EventZones);
         this.addComponent('directionArrows', DirectionArrows);
         this.addComponent('mainCamera', MainCamera);

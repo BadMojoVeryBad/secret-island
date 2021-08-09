@@ -15,8 +15,8 @@ export class Constants {
     public readonly TILE_MARGIN = 4;
 
     // Player constants.
-    public readonly PLAYER_HORIZONAL_VELOCITY = 60;
-    public readonly PLAYER_HORIZONAL_VELOCITY_MAX = 60;
+    public readonly PLAYER_HORIZONAL_VELOCITY = 50;
+    public readonly PLAYER_HORIZONAL_VELOCITY_MAX = 50;
     public readonly PLAYER_VERTICAL_VELOCITY = 140;
     public readonly PLAYER_VERTICAL_VELOCITY_MAX = 140;
     public readonly PLAYER_GRAVITY_MODIFIER = 0;

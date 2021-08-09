@@ -12,6 +12,8 @@ export class PlayerLight extends Component {
     private constants: Constants;
     private player: PlayerData;
     private masks: Phaser.Math.Vector2[] = [];
+    private cavePlantMasks: Phaser.Math.Vector2[] = [];
+    private caveWaterMasks: Phaser.Math.Vector2[] = [];
     private rt: Phaser.GameObjects.RenderTexture;
     private rect: Phaser.GameObjects.Rectangle;
 
@@ -75,6 +77,18 @@ export class PlayerLight extends Component {
         this.events.on('addMask', (data: Phaser.Math.Vector2) => {
             this.masks.push(data);
         });
+
+        this.events.on('addCavePlantMask', (data: Phaser.Math.Vector2) => {
+            this.cavePlantMasks.push(data);
+        });
+
+        this.events.on('addCaveWaterMask', (data: Phaser.Math.Vector2) => {
+            this.caveWaterMasks.push(data);
+        });
+
+        this.events.on('disableMask', (data: Phaser.Math.Vector2) => {
+            this.rect.setAlpha(0);
+        });
     }
 
     public update(): void {
@@ -97,6 +111,30 @@ export class PlayerLight extends Component {
                 y: mask.y,
                 key: 'textures',
                 frame: 'light',
+                add: false
+            });
+            this.rt.draw(maskImage);
+        }
+
+        // Add otehr masks.
+        for (const mask of this.cavePlantMasks) {
+            const maskImage = this.scene.make.image({
+                x: mask.x,
+                y: mask.y,
+                key: 'textures',
+                frame: 'caveplantGlow',
+                add: false
+            });
+            this.rt.draw(maskImage);
+        }
+
+        // Add otehr masks.
+        for (const mask of this.caveWaterMasks) {
+            const maskImage = this.scene.make.image({
+                x: mask.x,
+                y: mask.y,
+                key: 'textures',
+                frame: 'caveWaterGlow',
                 add: false
             });
             this.rt.draw(maskImage);

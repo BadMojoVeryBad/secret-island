@@ -18,6 +18,7 @@ export default {
     physics: {
         default: 'arcade',
         arcade: {
+            tileBias: 8,
             gravity: {
                 y: 600
             },

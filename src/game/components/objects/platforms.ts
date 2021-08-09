@@ -41,17 +41,22 @@ export class Platforms extends Component {
         });
 
         this.events.on('largePlatform', (event: Phaser.Types.Tilemaps.TiledObject) => {
-            const sprite = this.scene.physics.add.staticSprite((event.x + 4) * this.constants.SCALE, (event.y - event.height * this.constants.HALF) * this.constants.SCALE, 'textures', 'platformLeft');
+            const sprite = this.scene.add.sprite((event.x + 4) * this.constants.SCALE, (event.y - event.height * this.constants.HALF) * this.constants.SCALE, 'textures', 'platformLeft');
             sprite.setScale(this.constants.SCALE);
             sprite.setDepth(this.constants.OBJECT_DEPTH + 1);
-            const sprite2 = this.scene.physics.add.staticSprite((event.x + event.width - 4) * this.constants.SCALE, (event.y - event.height * this.constants.HALF) * this.constants.SCALE, 'textures', 'platformLeft');
+            const sprite2 = this.scene.add.sprite((event.x + event.width - 4) * this.constants.SCALE, (event.y - event.height * this.constants.HALF) * this.constants.SCALE, 'textures', 'platformLeft');
             sprite2.setScale(this.constants.SCALE);
             sprite2.setDepth(this.constants.OBJECT_DEPTH + 1);
             sprite2.flipX = true;
-            const rectangle = this.scene.add.rectangle((event.x + event.width * this.constants.HALF) * this.constants.SCALE, (event.y - event.height) * this.constants.SCALE, 16, 1, 0x607849, 1);
+            const sprite3 = this.scene.add.sprite((event.x + event.width * this.constants.HALF) * this.constants.SCALE, (event.y - event.height * this.constants.HALF) * this.constants.SCALE, 'textures', 'platformMiddle');
+            sprite3.setScale(this.constants.SCALE);
+            sprite3.setDepth(this.constants.OBJECT_DEPTH + 1);
+            sprite3.flipX = true;
+            const rectangle = this.scene.add.rectangle((event.x + event.width * this.constants.HALF) * this.constants.SCALE, (event.y - 2) * this.constants.SCALE, 8, 1, 0x607849, 0);
             rectangle.setScale(this.constants.SCALE);
             rectangle.setDepth(this.constants.OBJECT_DEPTH + 1);
             this.scene.physics.add.existing(rectangle, true);
+            (rectangle.body as Phaser.Physics.Arcade.StaticBody).setSize(24, 3);
             this.platforms.push(rectangle);
 
             if (this.player) {
