@@ -17,8 +17,8 @@ export class Constants {
     // Player constants.
     public readonly PLAYER_HORIZONAL_VELOCITY = 50;
     public readonly PLAYER_HORIZONAL_VELOCITY_MAX = 50;
-    public readonly PLAYER_VERTICAL_VELOCITY = 140;
-    public readonly PLAYER_VERTICAL_VELOCITY_MAX = 140;
+    public readonly PLAYER_VERTICAL_VELOCITY = 170;
+    public readonly PLAYER_VERTICAL_VELOCITY_MAX = 170;
     public readonly PLAYER_GRAVITY_MODIFIER = 0;
     public readonly PLAYER_JUMP_DELAY = 100;
 

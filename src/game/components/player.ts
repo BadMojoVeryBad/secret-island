@@ -71,6 +71,7 @@ export class Player extends Component {
         });
 
         this.events.on('robotJumping', () => {
+            this.player.isJumping = true;
             this.player.isSitting = false;
         });
     }
