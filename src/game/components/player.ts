@@ -98,6 +98,9 @@ export class Player extends Component {
             this.player.sprite.setVelocityY(velocityY);
         }
 
+        // Round to the nearest full pixel.
+        this.player.sprite.x = Math.round(this.player.sprite.x);
+
         // Set grounded flag.
         this.player.isGrounded = (this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down);
 

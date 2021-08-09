@@ -89,20 +89,22 @@ export class PlayerLight extends Component {
         this.events.on('disableMask', (data: Phaser.Math.Vector2) => {
             this.rect.setAlpha(0);
         });
+
+        this.scene.events.on('postupdate', () => {
+            // Add player mask.
+            const mask = this.scene.make.image({
+                x: this.player.sprite.body.x,
+                y: this.player.sprite.body.y,
+                key: 'textures',
+                frame: 'light',
+                add: false
+            });
+            this.rt.draw(mask);
+        });
     }
 
     public update(): void {
         this.rt.clear();
-
-        // Add player mask.
-        const mask = this.scene.make.image({
-            x: this.player.sprite.x,
-            y: this.player.sprite.y,
-            key: 'textures',
-            frame: 'light',
-            add: false
-        });
-        this.rt.draw(mask);
 
         // Add otehr masks.
         for (const mask of this.masks) {
