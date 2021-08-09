@@ -25,6 +25,22 @@ export class DirectionArrows extends Component {
     public create(): void {
         this.events.on('directionArrows', (event: Phaser.Types.Tilemaps.TiledObject) => {
             const sprite = this.scene.add.sprite(this.constants.ZERO, this.constants.ZERO, 'textures', 'directionArrows');
+            sprite.setAlpha(0);
+            sprite.setScale(this.constants.SCALE);
+            sprite.setDepth(this.constants.OBJECT_DEPTH);
+            sprite.flipX = event.flippedHorizontal;
+            sprite.flipY = event.flippedVertical;
+            sprite.setPosition((event.x + sprite.width * this.constants.HALF) * this.constants.SCALE, (event.y - sprite.height * this.constants.HALF) * this.constants.SCALE);
+            sprite.setData('active', false);
+            this.scene.physics.add.existing(sprite, true);
+            (sprite.body as Phaser.Physics.Arcade.Body).setCircle(16);
+            (sprite.body as Phaser.Physics.Arcade.Body).setOffset(-16 + (sprite.width * this.constants.SCALE * this.constants.HALF), -16 + (sprite.height * this.constants.SCALE * this.constants.HALF));
+            this.arrows.push(sprite);
+        });
+
+        this.events.on('downArrow', (event: Phaser.Types.Tilemaps.TiledObject) => {
+            const sprite = this.scene.add.sprite(this.constants.ZERO, this.constants.ZERO, 'textures', 'downIndicator');
+            sprite.setAlpha(0);
             sprite.setScale(this.constants.SCALE);
             sprite.setDepth(this.constants.OBJECT_DEPTH);
             sprite.flipX = event.flippedHorizontal;
