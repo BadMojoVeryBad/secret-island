@@ -18,11 +18,11 @@ export class PlayerData {
 @injectable()
 export class Player extends Component {
     private player: PlayerData;
-    private cursors: Phaser.Types.Input.Keyboard.CursorKeys;
     private logger: LoggerInterface;
     private events: EventsInterface;
     private constants: Constants;
     private playerStrategy: PlayerStrategyInterface;
+    private gameStarted = false;
 
     constructor(@inject('LoggerInterface') logger: LoggerInterface, @inject('EventsInterface') events: EventsInterface, @inject('Constants') constants: Constants, @inject('PlayerStrategyInterface') playerStrategy: PlayerStrategyInterface) {
         super();
@@ -41,13 +41,12 @@ export class Player extends Component {
     public create(): void {
         this.logger.info('Running "create()" for "robot".');
 
-        this.cursors = this.scene.input.keyboard.createCursorKeys();
-
         this.player = new PlayerData();
         this.player.sprite = this.scene.physics.add.sprite(137, 189, 'textures', 'player');
         this.player.sprite.setDepth(this.constants.PLAYER_DEPTH);
         this.player.sprite.setSize(3, 10);
         this.player.sprite.body.setOffset(8, 6);
+        this.player.sprite.setData('footstepPlayed', false);
         // this.player.sprite.setCollideWorldBounds(true);
 
         this.events.on('playerStart', (event: Phaser.Types.Tilemaps.TiledObject) => {
@@ -71,8 +70,13 @@ export class Player extends Component {
         });
 
         this.events.on('robotJumping', () => {
+            this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.2 });
             this.player.isJumping = true;
             this.player.isSitting = false;
+        });
+
+        this.events.on('gameStarted', () => {
+            this.gameStarted = true;
         });
     }
 
@@ -101,6 +105,11 @@ export class Player extends Component {
         // Round to the nearest full pixel.
         this.player.sprite.x = Math.round(this.player.sprite.x);
 
+        // If the player is touching the ground, and they previously weren't, they have landed.
+        if ((this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down) && !this.player.isGrounded && this.gameStarted) {
+            this.events.fire('playAudio', { key: 'stepFall' + Math.ceil(Math.random() * 3), volume: 0.2 });
+        }
+
         // Set grounded flag.
         this.player.isGrounded = (this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down);
 
@@ -118,5 +127,14 @@ export class Player extends Component {
 
         const animation = this.playerStrategy.getAnimation(this.player.sprite.body.velocity, (this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down), this.player.isSitting);
         this.player.sprite.anims.play(animation, true);
+
+        if (this.player.sprite.anims.getFrameName() === 'playerRunning5' && this.player.isGrounded && !this.player.sprite.getData('footstepPlayed')) {
+            this.player.sprite.setData('footstepPlayed', true);
+            this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.2 });
+        }
+
+        if (this.player.sprite.anims.getFrameName() !== 'playerRunning5') {
+            this.player.sprite.setData('footstepPlayed', false);
+        }
     }
 }

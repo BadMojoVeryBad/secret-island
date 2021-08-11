@@ -43,6 +43,7 @@ export class Start extends Component {
     public update(): void {
         if (this.controls.isActive(Control.ACTIVATE) && !this.activated) {
             this.activated = true;
+            this.events.fire('gameStarted');
 
             setTimeout(() => {
                 this.scene.tweens.add({

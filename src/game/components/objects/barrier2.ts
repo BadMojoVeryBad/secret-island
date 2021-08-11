@@ -39,15 +39,22 @@ export class Barrier2 extends Component {
         this.events.on('lightBrazier2', (event: Phaser.Types.Tilemaps.TiledObject) => {
             this.events.fire('disableControls');
             this.events.fire('increaseSaturation');
+            this.events.fire('playAudio', { key: 'brazier2', volume: 0.8 });
+
+            setTimeout(() => {
+                this.events.fire('playAudio', { key: 'music2', volume: 0.8 });
+            }, 500);
 
             setTimeout(() => {
                 this.scene.cameras.main.stopFollow();
-                this.scene.cameras.main.pan(948, 196, 2000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
+                this.scene.cameras.main.pan(948, 196, 4000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
                     if (progress !== 1) {
                         return;
                     }
 
                     setTimeout(() => {
+                        this.events.fire('playAudio', { key: 'dissolve' });
+
                         // Particle emitter thing.
                         const particles = this.scene.add.particles('textures', 'greenParticle');
                         const emitter = particles.createEmitter({
@@ -75,7 +82,7 @@ export class Barrier2 extends Component {
                         this.barrier.destroy();
 
                         setTimeout(() => {
-                            this.scene.cameras.main.pan(this.player.sprite.x, this.player.sprite.y, 2000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
+                            this.scene.cameras.main.pan(this.player.sprite.x, this.player.sprite.y, 3000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
                                 if (progress !== 1) {
                                     return;
                                 }

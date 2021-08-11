@@ -12,7 +12,31 @@ export class Load extends Scene {
 
     public preload(): void {
         // Load audio.
-        // ...
+        this.load.audio('ambientCave', 'assets/sfx/ambientCave.ogg');
+        this.load.audio('ambientIsland', 'assets/sfx/ambientIsland.ogg');
+        this.load.audio('brazier1', 'assets/sfx/brazier1.ogg');
+        this.load.audio('brazier2', 'assets/sfx/brazier2.ogg');
+        this.load.audio('brazier3', 'assets/sfx/brazier3.ogg');
+        this.load.audio('brazier4', 'assets/sfx/brazier4.ogg');
+        this.load.audio('eyeOpen', 'assets/sfx/eyeOpen.ogg');
+        this.load.audio('dissolve', 'assets/sfx/dissolve.ogg');
+        this.load.audio('step1', 'assets/sfx/step1.ogg');
+        this.load.audio('step2', 'assets/sfx/step2.ogg');
+        this.load.audio('step3', 'assets/sfx/step3.ogg');
+        this.load.audio('stepGrass1', 'assets/sfx/stepGrass1.ogg');
+        this.load.audio('stepGrass2', 'assets/sfx/stepGrass2.ogg');
+        this.load.audio('stepGrass3', 'assets/sfx/stepGrass3.ogg');
+        this.load.audio('stepSand1', 'assets/sfx/stepSand1.ogg');
+        this.load.audio('stepSand2', 'assets/sfx/stepSand2.ogg');
+        this.load.audio('stepSand3', 'assets/sfx/stepSand3.ogg');
+        this.load.audio('stepFall1', 'assets/sfx/stepFall1.ogg');
+        this.load.audio('stepFall2', 'assets/sfx/stepFall2.ogg');
+        this.load.audio('stepFall3', 'assets/sfx/stepFall3.ogg');
+        this.load.audio('music1', 'assets/music/music1.ogg');
+        this.load.audio('music2', 'assets/music/music2.ogg');
+        this.load.audio('music3', 'assets/music/music3.ogg');
+        this.load.audio('music4', 'assets/music/music4.ogg');
+        this.load.audio('npc', 'assets/sfx/npc.ogg');
 
         // Load images.
         this.load.image('tiles', 'assets/tiles.png');
@@ -38,7 +62,7 @@ export class Load extends Scene {
             const x = this.loader.x - (this.loader.displayWidth * this.constants.HALF) + this.constants.SCALE;
             const y = this.loader.y - (this.loader.displayHeight * this.constants.HALF) + this.constants.SCALE;
             const height = 2;
-            const width = (this.loader.displayWidth - 16) * percent;
+            const width = (this.loader.displayWidth - 2) * percent;
             graphics.fillRect(x, y, width, height);
         });
 

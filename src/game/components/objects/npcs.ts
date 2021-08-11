@@ -60,6 +60,7 @@ export class NPCs extends Component {
 
             const collide = this.scene.physics.overlap(npc, this.player.sprite);
             if (!npc.getData('active') && collide) {
+                this.events.fire('playAudio', { key: 'npc', volume: 0.2 });
                 this.scene.tweens.add({
                     targets: bubble,
                     alpha: { from: 0, to: 1 },

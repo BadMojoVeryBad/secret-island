@@ -40,15 +40,22 @@ export class Barrier3 extends Component {
             this.events.fire('disableControls');
             this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
             this.events.fire('increaseSaturation');
+            this.events.fire('playAudio', { key: 'brazier3', volume: 0.8 });
+
+            setTimeout(() => {
+                this.events.fire('playAudio', { key: 'music3', volume: 0.8 });
+            }, 500);
 
             setTimeout(() => {
                 this.scene.cameras.main.stopFollow();
-                this.scene.cameras.main.pan(724, 405, 2000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
+                this.scene.cameras.main.pan(724, 405, 3000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
                     if (progress !== 1) {
                         return;
                     }
 
                     setTimeout(() => {
+                        this.events.fire('playAudio', { key: 'dissolve' });
+
                         // Particle emitter thing.
                         const particles = this.scene.add.particles('textures', 'whiteParticle');
                         const emitter = particles.createEmitter({

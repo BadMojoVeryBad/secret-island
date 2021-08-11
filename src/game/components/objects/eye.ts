@@ -60,10 +60,15 @@ export class Eye extends Component {
         this.events.on('lightBrazier4', (brazier: Phaser.GameObjects.Sprite) => {
             this.events.fire('disableControls');
             this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
+            this.events.fire('playAudio', { key: 'brazier4', volume: 0.8 });
+
+            setTimeout(() => {
+                this.events.fire('playAudio', { key: 'music4', volume: 0.8 });
+            }, 500);
 
             setTimeout(() => {
                 this.scene.cameras.main.stopFollow();
-                this.scene.cameras.main.pan(471, 396, 2000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
+                this.scene.cameras.main.pan(471, 396, 3000, 'Quad.easeInOut', false, (camera: any, progress: number) => {
                     if (progress !== 1) {
                         return;
                     }
@@ -72,6 +77,7 @@ export class Eye extends Component {
                         // Open eye.
                         const eye: Phaser.GameObjects.Sprite = this.eyes[0].getData('eye');
                         eye.setTexture('textures', 'eyeOpen');
+                        this.events.fire('playAudio', { key: 'eyeOpen' });
 
                         // Mask.
                         this.events.fire('addMask', new Phaser.Math.Vector2(eye.x, eye.y));

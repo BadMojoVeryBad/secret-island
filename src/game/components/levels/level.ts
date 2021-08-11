@@ -63,6 +63,12 @@ export class Level extends Component {
             this.logger.info('Adding collision between player and level.');
             this.scene.physics.add.collider(player.sprite, layer);
         });
+
+        this.events.fire('playAudio', {
+            key: 'ambientIsland',
+            loop: true,
+            volume: 2.5,
+        });
     }
 
     public afterCreate(): void {
