@@ -61,6 +61,13 @@ export class Eye extends Component {
             this.events.fire('disableControls');
             this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
             this.events.fire('playAudio', { key: 'brazier4', volume: 0.6 });
+            this.events.fire('playSpatialAudio', {
+                key: 'flame',
+                x: brazier.x,
+                y: brazier.y,
+                radius: 32,
+                loop: true
+            });
 
             setTimeout(() => {
                 this.events.fire('playAudio', { key: 'music4', volume: 0.6 });

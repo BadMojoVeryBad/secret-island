@@ -36,10 +36,17 @@ export class Barrier2 extends Component {
             }
         });
 
-        this.events.on('lightBrazier2', (event: Phaser.Types.Tilemaps.TiledObject) => {
+        this.events.on('lightBrazier2', (brazier: Phaser.GameObjects.Sprite) => {
             this.events.fire('disableControls');
             this.events.fire('increaseSaturation');
             this.events.fire('playAudio', { key: 'brazier2', volume: 0.6 });
+            this.events.fire('playSpatialAudio', {
+                key: 'flame',
+                x: brazier.x,
+                y: brazier.y,
+                radius: 32,
+                loop: true
+            });
 
             setTimeout(() => {
                 this.events.fire('playAudio', { key: 'music2', volume: 0.6 });

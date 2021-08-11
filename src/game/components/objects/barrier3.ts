@@ -41,6 +41,13 @@ export class Barrier3 extends Component {
             this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
             this.events.fire('increaseSaturation');
             this.events.fire('playAudio', { key: 'brazier3', volume: 0.6 });
+            this.events.fire('playSpatialAudio', {
+                key: 'flame',
+                x: brazier.x,
+                y: brazier.y,
+                radius: 32,
+                loop: true
+            });
 
             setTimeout(() => {
                 this.events.fire('playAudio', { key: 'music3', volume: 0.6 });

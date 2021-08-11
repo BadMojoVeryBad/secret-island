@@ -18,6 +18,7 @@ export class Load extends Scene {
         this.load.audio('brazier2', 'assets/sfx/brazier2.ogg');
         this.load.audio('brazier3', 'assets/sfx/brazier3.ogg');
         this.load.audio('brazier4', 'assets/sfx/brazier4.ogg');
+        this.load.audio('flame', 'assets/sfx/flame.ogg');
         this.load.audio('eyeOpen', 'assets/sfx/eyeOpen.ogg');
         this.load.audio('dissolve', 'assets/sfx/dissolve.ogg');
         this.load.audio('step1', 'assets/sfx/step1.ogg');
