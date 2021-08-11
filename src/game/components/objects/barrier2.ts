@@ -39,10 +39,10 @@ export class Barrier2 extends Component {
         this.events.on('lightBrazier2', (event: Phaser.Types.Tilemaps.TiledObject) => {
             this.events.fire('disableControls');
             this.events.fire('increaseSaturation');
-            this.events.fire('playAudio', { key: 'brazier2', volume: 0.8 });
+            this.events.fire('playAudio', { key: 'brazier2', volume: 0.6 });
 
             setTimeout(() => {
-                this.events.fire('playAudio', { key: 'music2', volume: 0.8 });
+                this.events.fire('playAudio', { key: 'music2', volume: 0.6 });
             }, 500);
 
             setTimeout(() => {

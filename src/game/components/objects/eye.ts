@@ -60,10 +60,10 @@ export class Eye extends Component {
         this.events.on('lightBrazier4', (brazier: Phaser.GameObjects.Sprite) => {
             this.events.fire('disableControls');
             this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
-            this.events.fire('playAudio', { key: 'brazier4', volume: 0.8 });
+            this.events.fire('playAudio', { key: 'brazier4', volume: 0.6 });
 
             setTimeout(() => {
-                this.events.fire('playAudio', { key: 'music4', volume: 0.8 });
+                this.events.fire('playAudio', { key: 'music4', volume: 0.6 });
             }, 500);
 
             setTimeout(() => {

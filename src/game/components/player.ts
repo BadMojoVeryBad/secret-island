@@ -45,7 +45,7 @@ export class Player extends Component {
         this.player.sprite = this.scene.physics.add.sprite(137, 189, 'textures', 'player');
         this.player.sprite.setDepth(this.constants.PLAYER_DEPTH);
         this.player.sprite.setSize(3, 10);
-        this.player.sprite.body.setOffset(8, 6);
+        this.player.sprite.body.setOffset(7, 6);
         this.player.sprite.setData('footstepPlayed', false);
         // this.player.sprite.setCollideWorldBounds(true);
 
@@ -107,7 +107,7 @@ export class Player extends Component {
 
         // If the player is touching the ground, and they previously weren't, they have landed.
         if ((this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down) && !this.player.isGrounded && this.gameStarted) {
-            this.events.fire('playAudio', { key: 'stepFall' + Math.ceil(Math.random() * 3), volume: 0.2 });
+            this.events.fire('playAudio', { key: 'stepFall' + Math.ceil(Math.random() * 3), volume: 0.5 });
         }
 
         // Set grounded flag.
@@ -130,7 +130,7 @@ export class Player extends Component {
 
         if (this.player.sprite.anims.getFrameName() === 'playerRunning5' && this.player.isGrounded && !this.player.sprite.getData('footstepPlayed')) {
             this.player.sprite.setData('footstepPlayed', true);
-            this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.2 });
+            this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.6 });
         }
 
         if (this.player.sprite.anims.getFrameName() !== 'playerRunning5') {

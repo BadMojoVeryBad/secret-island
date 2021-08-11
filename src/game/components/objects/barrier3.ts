@@ -40,10 +40,10 @@ export class Barrier3 extends Component {
             this.events.fire('disableControls');
             this.events.fire('addMask', new Phaser.Math.Vector2(brazier.x, brazier.y));
             this.events.fire('increaseSaturation');
-            this.events.fire('playAudio', { key: 'brazier3', volume: 0.8 });
+            this.events.fire('playAudio', { key: 'brazier3', volume: 0.6 });
 
             setTimeout(() => {
-                this.events.fire('playAudio', { key: 'music3', volume: 0.8 });
+                this.events.fire('playAudio', { key: 'music3', volume: 0.6 });
             }, 500);
 
             setTimeout(() => {

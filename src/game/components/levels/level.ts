@@ -64,11 +64,11 @@ export class Level extends Component {
             this.scene.physics.add.collider(player.sprite, layer);
         });
 
-        this.events.fire('playAudio', {
-            key: 'ambientIsland',
-            loop: true,
-            volume: 2.5,
-        });
+        // this.events.fire('playAudio', {
+        //     key: 'ambientIsland',
+        //     loop: true,
+        //     volume: 2.5,
+        // });
     }
 
     public afterCreate(): void {

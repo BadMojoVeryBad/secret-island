@@ -33,6 +33,7 @@ export class MainCamera extends Component {
         this.logger.info('Adding shader effects to player.');
         this.scene.cameras.main.setPostPipeline([Vignette, SoftLight, HSL]);
         this.scene.cameras.main.fadeIn(1000, 0, 0, 0);
+        this.scene.cameras.main.roundPixels = true;
 
         let pipelineInstance = this.scene.cameras.main.getPostPipeline(HSL);
         (pipelineInstance as HSL).setSatAdjust(this.sat);

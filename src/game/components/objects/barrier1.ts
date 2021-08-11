@@ -39,10 +39,10 @@ export class Barrier1 extends Component {
         this.events.on('lightBrazier1', (event: Phaser.Types.Tilemaps.TiledObject) => {
             this.events.fire('disableControls');
             this.events.fire('increaseSaturation');
-            this.events.fire('playAudio', { key: 'brazier1', volume: 0.8 });
+            this.events.fire('playAudio', { key: 'brazier1', volume: 0.6 });
 
             setTimeout(() => {
-                this.events.fire('playAudio', { key: 'music1', volume: 0.8 });
+                this.events.fire('playAudio', { key: 'music1', volume: 0.6 });
             }, 500);
 
             setTimeout(() => {
@@ -53,7 +53,7 @@ export class Barrier1 extends Component {
                     }
 
                     setTimeout(() => {
-                        this.events.fire('playAudio', { key: 'dissolve' });
+                        this.events.fire('playAudio', { key: 'dissolve', volume: 2 });
 
                         // Particle emitter thing.
                         const particles = this.scene.add.particles('textures', 'greenParticle');
