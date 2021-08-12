@@ -70,7 +70,9 @@ export class Player extends Component {
         });
 
         this.events.on('robotJumping', () => {
-            this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.2 });
+            if (!this.player.isJumping) {
+                this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.2 });
+            }
             this.player.isJumping = true;
             this.player.isSitting = false;
         });
@@ -107,14 +109,14 @@ export class Player extends Component {
 
         // If the player is touching the ground, and they previously weren't, they have landed.
         if ((this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down) && !this.player.isGrounded && this.gameStarted) {
-            this.events.fire('playAudio', { key: 'stepFall' + Math.ceil(Math.random() * 3), volume: 0.5 });
+            this.events.fire('playAudio', { key: 'stepFall' + Math.ceil(Math.random() * 3), volume: 0.2 });
         }
 
         // Set grounded flag.
         this.player.isGrounded = (this.player.sprite.body.blocked.down || this.player.sprite.body.touching.down);
 
         // Set last grounded time.
-        if (this.player.isGrounded) {
+        if (this.player.isGrounded && this.player.sprite.body.velocity.y > -1) {
             this.player.lastGrounded = time;
             this.player.isJumping = false;
         }
@@ -130,7 +132,7 @@ export class Player extends Component {
 
         if (this.player.sprite.anims.getFrameName() === 'playerRunning5' && this.player.isGrounded && !this.player.sprite.getData('footstepPlayed')) {
             this.player.sprite.setData('footstepPlayed', true);
-            this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.6 });
+            this.events.fire('playAudio', { key: 'step' + Math.ceil(Math.random() * 3), volume: 0.3 });
         }
 
         if (this.player.sprite.anims.getFrameName() !== 'playerRunning5') {

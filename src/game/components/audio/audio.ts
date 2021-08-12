@@ -17,6 +17,7 @@ class SpatialSound {
     public circle: Phaser.Geom.Circle;
     public isPlaying: boolean = false;
     public sound: Phaser.Sound.BaseSound;
+    public volume: number = 1;
 }
 
 @injectable()
@@ -52,6 +53,7 @@ export class Audio extends Component {
             spatialSound.key = config.key;
             spatialSound.sound = this.scene.sound.add(config.key, config);
             spatialSound.sound.play();
+            spatialSound.volume = config.volume;
             this.spatialSounds.push(spatialSound);
         });
 
@@ -69,7 +71,7 @@ export class Audio extends Component {
             const sound = this.getSound({
                 key: ambientSound.key,
                 loop: true,
-                volume: (ambientSound.key === 'ambientCave') ? 0.4 : 0.2,
+                volume: (ambientSound.key === 'ambientCave') ? 0.4 : 0.1,
             });
         });
 
@@ -99,7 +101,7 @@ export class Audio extends Component {
                     ambientSound.isPlaying = true;
                     this.scene.tweens.add({
                         targets: sound,
-                        volume: { from: 0, to: (ambientSound.key === 'ambientCave') ? 0.4 : 0.2 },
+                        volume: { from: 0, to: (ambientSound.key === 'ambientCave') ? 0.4 : 0.1 },
                         duration: 500
                     })
                 }
@@ -108,7 +110,7 @@ export class Audio extends Component {
                     ambientSound.isPlaying = false;
                     this.scene.tweens.add({
                         targets: sound,
-                        volume: { from: (ambientSound.key === 'ambientCave') ? 0.4 : 0.2, to: 0 },
+                        volume: { from: (ambientSound.key === 'ambientCave') ? 0.4 : 0.1, to: 0 },
                         duration: 500,
                         onComplete: () => {
                             sound.stop();
@@ -123,7 +125,7 @@ export class Audio extends Component {
             const distance = cameraPosition.distance(new Phaser.Math.Vector2(spatialSound.circle.x, spatialSound.circle.y));
 
             // Get the volume based on radius.
-            const volume = this.mathHelper.clamp(this.mathHelper.normalise(distance, 0, spatialSound.circle.radius), 0, 1);
+            const volume = this.mathHelper.clamp(this.mathHelper.normalise(distance, 0, spatialSound.circle.radius) * spatialSound.volume, 0, spatialSound.volume);
             // @ts-ignore
             spatialSound.sound.setVolume(volume);
         }

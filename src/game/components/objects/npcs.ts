@@ -39,13 +39,25 @@ export class NPCs extends Component {
             this.npcs.push(sprite);
 
             const type = this.tilemapStrategy.getProperty<string>(event, 'type');
-            const sprite2 = this.scene.add.sprite(this.constants.ZERO, this.constants.ZERO, 'textures', type);
-            sprite2.setScale(this.constants.SCALE);
-            sprite2.setDepth(this.constants.OBJECT_DEPTH);
-            sprite2.setPosition((event.x + sprite.width + 4) * this.constants.SCALE, event.y - event.height * this.constants.SCALE);
-            sprite2.setAlpha(0);
-            sprite.setData('bubble', sprite2);
-            sprite.setData('active', false);
+            if (type) {
+                const sprite2 = this.scene.add.sprite(this.constants.ZERO, this.constants.ZERO, 'textures', type);
+                sprite2.setScale(this.constants.SCALE);
+                sprite2.setDepth(this.constants.OBJECT_DEPTH);
+                sprite2.setPosition((event.x + sprite.width + 4) * this.constants.SCALE, event.y - event.height * this.constants.SCALE);
+                sprite2.setAlpha(0);
+                sprite.setData('bubble', sprite2);
+                sprite.setData('active', false);
+            }
+
+            if (event.type === 'ending') {
+                sprite.setAlpha(0);
+            }
+        });
+
+        this.events.on('lightBrazier4', () => {
+            for (const npc of this.npcs) {
+                npc.setAlpha(1);
+            }
         });
 
         this.events.on('playerCreated', (player: PlayerData) => {
@@ -59,7 +71,7 @@ export class NPCs extends Component {
             const bubble: Phaser.GameObjects.Sprite = npc.getData('bubble');
 
             const collide = this.scene.physics.overlap(npc, this.player.sprite);
-            if (!npc.getData('active') && collide) {
+            if (!npc.getData('active') && collide && bubble) {
                 this.events.fire('playAudio', { key: 'npc', volume: 0.2 });
                 this.scene.tweens.add({
                     targets: bubble,
@@ -70,7 +82,7 @@ export class NPCs extends Component {
                     yoyo: false
                 });
                 npc.setData('active', true);
-            } else if (npc.getData('active') && !collide) {
+            } else if (npc.getData('active') && !collide && bubble) {
                 this.scene.tweens.add({
                     targets: bubble,
                     alpha: { from: 1, to: 0 },

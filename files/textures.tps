@@ -360,6 +360,50 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">textures/crab1.png</key>
+            <key type="filename">textures/crab2.png</key>
+            <key type="filename">textures/crab3.png</key>
+            <key type="filename">textures/crab4.png</key>
+            <key type="filename">textures/npc.png</key>
+            <key type="filename">textures/npc1.png</key>
+            <key type="filename">textures/npc2.png</key>
+            <key type="filename">textures/npc3.png</key>
+            <key type="filename">textures/npc4.png</key>
+            <key type="filename">textures/player.png</key>
+            <key type="filename">textures/playerRunning1.png</key>
+            <key type="filename">textures/playerRunning2.png</key>
+            <key type="filename">textures/playerRunning3.png</key>
+            <key type="filename">textures/playerRunning4.png</key>
+            <key type="filename">textures/playerRunning5.png</key>
+            <key type="filename">textures/playerRunning6.png</key>
+            <key type="filename">textures/playerSitting1.png</key>
+            <key type="filename">textures/playerSitting2.png</key>
+            <key type="filename">textures/playerSitting3.png</key>
+            <key type="filename">textures/playerSitting4.png</key>
+            <key type="filename">textures/playerSitting5.png</key>
+            <key type="filename">textures/playerSitting6.png</key>
+            <key type="filename">textures/playerStanding1.png</key>
+            <key type="filename">textures/playerStanding2.png</key>
+            <key type="filename">textures/playerStanding3.png</key>
+            <key type="filename">textures/playerStanding4.png</key>
+            <key type="filename">textures/playerStanding5.png</key>
+            <key type="filename">textures/playerStanding6.png</key>
+            <key type="filename">textures/speechBubble1.png</key>
+            <key type="filename">textures/speechBubble2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,4,8,8</rect>
+                <key>scale9Paddings</key>
+                <rect>4,4,8,8</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">textures/directionArrows.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -439,6 +483,52 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">textures/fish1.png</key>
+            <key type="filename">textures/fish10.png</key>
+            <key type="filename">textures/fish11.png</key>
+            <key type="filename">textures/fish12.png</key>
+            <key type="filename">textures/fish13.png</key>
+            <key type="filename">textures/fish14.png</key>
+            <key type="filename">textures/fish15.png</key>
+            <key type="filename">textures/fish16.png</key>
+            <key type="filename">textures/fish17.png</key>
+            <key type="filename">textures/fish18.png</key>
+            <key type="filename">textures/fish19.png</key>
+            <key type="filename">textures/fish2.png</key>
+            <key type="filename">textures/fish20.png</key>
+            <key type="filename">textures/fish21.png</key>
+            <key type="filename">textures/fish22.png</key>
+            <key type="filename">textures/fish23.png</key>
+            <key type="filename">textures/fish3.png</key>
+            <key type="filename">textures/fish4.png</key>
+            <key type="filename">textures/fish5.png</key>
+            <key type="filename">textures/fish6.png</key>
+            <key type="filename">textures/fish7.png</key>
+            <key type="filename">textures/fish8.png</key>
+            <key type="filename">textures/fish9.png</key>
+            <key type="filename">textures/palmTree1.png</key>
+            <key type="filename">textures/palmTree2.png</key>
+            <key type="filename">textures/palmTree3.png</key>
+            <key type="filename">textures/palmTree4.png</key>
+            <key type="filename">textures/palmTree5.png</key>
+            <key type="filename">textures/palmTree6.png</key>
+            <key type="filename">textures/palmTree7.png</key>
+            <key type="filename">textures/palmTree8.png</key>
+            <key type="filename">textures/palmTree9.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9Paddings</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">textures/house.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -481,69 +571,6 @@
                 <rect>32,32,64,64</rect>
                 <key>scale9Paddings</key>
                 <rect>32,32,64,64</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">textures/npc.png</key>
-            <key type="filename">textures/npc1.png</key>
-            <key type="filename">textures/npc2.png</key>
-            <key type="filename">textures/npc3.png</key>
-            <key type="filename">textures/npc4.png</key>
-            <key type="filename">textures/player.png</key>
-            <key type="filename">textures/playerRunning1.png</key>
-            <key type="filename">textures/playerRunning2.png</key>
-            <key type="filename">textures/playerRunning3.png</key>
-            <key type="filename">textures/playerRunning4.png</key>
-            <key type="filename">textures/playerRunning5.png</key>
-            <key type="filename">textures/playerRunning6.png</key>
-            <key type="filename">textures/playerSitting1.png</key>
-            <key type="filename">textures/playerSitting2.png</key>
-            <key type="filename">textures/playerSitting3.png</key>
-            <key type="filename">textures/playerSitting4.png</key>
-            <key type="filename">textures/playerSitting5.png</key>
-            <key type="filename">textures/playerSitting6.png</key>
-            <key type="filename">textures/playerStanding1.png</key>
-            <key type="filename">textures/playerStanding2.png</key>
-            <key type="filename">textures/playerStanding3.png</key>
-            <key type="filename">textures/playerStanding4.png</key>
-            <key type="filename">textures/playerStanding5.png</key>
-            <key type="filename">textures/playerStanding6.png</key>
-            <key type="filename">textures/speechBubble1.png</key>
-            <key type="filename">textures/speechBubble2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,4,8,8</rect>
-                <key>scale9Paddings</key>
-                <rect>4,4,8,8</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">textures/palmTree1.png</key>
-            <key type="filename">textures/palmTree2.png</key>
-            <key type="filename">textures/palmTree3.png</key>
-            <key type="filename">textures/palmTree4.png</key>
-            <key type="filename">textures/palmTree5.png</key>
-            <key type="filename">textures/palmTree6.png</key>
-            <key type="filename">textures/palmTree7.png</key>
-            <key type="filename">textures/palmTree8.png</key>
-            <key type="filename">textures/palmTree9.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,8,16,16</rect>
-                <key>scale9Paddings</key>
-                <rect>8,8,16,16</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

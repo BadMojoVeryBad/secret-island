@@ -66,11 +66,12 @@ export class Eye extends Component {
                 x: brazier.x,
                 y: brazier.y,
                 radius: 32,
-                loop: true
+                loop: true,
+                volume: 0.3,
             });
 
             setTimeout(() => {
-                this.events.fire('playAudio', { key: 'music4', volume: 0.6 });
+                this.events.fire('playAudio', { key: 'music4', volume: 0.7 });
             }, 500);
 
             setTimeout(() => {

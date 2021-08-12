@@ -32,6 +32,9 @@ export class Gameplay extends Scene {
         this.addComponent('caveWater');
         this.addComponent('eye');
         this.addComponent('audio');
+        this.addComponent('crabs');
+        this.addComponent('fishies');
+        this.addComponent('whiteParticles');
 
         // Add the "level" component with the level name so it
         // can load the lorrect tiled maps.

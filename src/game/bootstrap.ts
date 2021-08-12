@@ -37,6 +37,9 @@ import { CavePlant } from './components/objects/cavePlant';
 import { CaveWater } from './components/objects/caveWater';
 import { Eye } from './components/objects/eye';
 import { Audio } from './components/audio/audio';
+import { Crabs } from './components/objects/crabs';
+import { Fishies } from './components/objects/fishies';
+import { WhiteParticles } from './components/objects/whiteParticles';
 
 /**
  * Bootstrap the game here.
@@ -69,6 +72,9 @@ export default class Bootstrap extends Game {
         this.addComponent('caveWater', CaveWater);
         this.addComponent('platforms', Platforms);
         this.addComponent('eye', Eye);
+        this.addComponent('crabs', Crabs);
+        this.addComponent('fishies', Fishies);
+        this.addComponent('whiteParticles', WhiteParticles);
         this.addComponent('audio', Audio);
         this.addComponent('eventZones', EventZones);
         this.addComponent('directionArrows', DirectionArrows);

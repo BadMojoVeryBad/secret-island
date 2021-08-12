@@ -136,5 +136,19 @@ export class Load extends Scene {
             frameRate: 12,
             repeat: -1,
         });
+
+        this.anims.create({
+            key: 'crab',
+            frames: this.anims.generateFrameNames('textures', { prefix: 'crab', start: 1, end: 4, zeroPad: 0 }),
+            frameRate: 6,
+            repeat: -1,
+        });
+
+        this.anims.create({
+            key: 'fish',
+            frames: this.anims.generateFrameNames('textures', { prefix: 'fish', start: 1, end: 23, zeroPad: 0 }),
+            frameRate: 12,
+            repeat: -1,
+        });
     }
 }
