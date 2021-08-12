@@ -61,7 +61,7 @@ export class Barrier1 extends Component {
                     }
 
                     setTimeout(() => {
-                        this.events.fire('playAudio', { key: 'dissolve', volume: 2 });
+                        this.events.fire('playAudio', { key: 'dissolve', volume: 0.8 });
 
                         // Particle emitter thing.
                         const particles = this.scene.add.particles('textures', 'greenParticle');

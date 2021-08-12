@@ -62,7 +62,7 @@ export class Barrier3 extends Component {
                     }
 
                     setTimeout(() => {
-                        this.events.fire('playAudio', { key: 'dissolve' });
+                        this.events.fire('playAudio', { key: 'dissolve', volume: 0.8 });
 
                         // Particle emitter thing.
                         const particles = this.scene.add.particles('textures', 'whiteParticle');
